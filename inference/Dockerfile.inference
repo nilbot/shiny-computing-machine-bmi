@@ -1,0 +1,8 @@
+FROM python:3.10-slim as python
+RUN apt update && apt install -y libgomp1
+COPY ./inference /app
+COPY ./model /app
+RUN pip install -r /app/requirements.txt
+WORKDIR /app
+EXPOSE 8000
+ENTRYPOINT ["uvicorn", "bmi_predictor:app", "--host", "0.0.0.0", "--port", "8000"]
