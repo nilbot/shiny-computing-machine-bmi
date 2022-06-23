@@ -1,6 +1,6 @@
 # BMI Predictor API server
 ## Model specification
-The predictive model is a gradient boosted decision tree predictor trained on a synthetic data set, which is derived from the provided `Dummy-Data.csv` and further enriched using synthetic generation based on the business rules described in documentation. Please see [exploratory notebook](./exploratry/build_dataset_and_train_model.ipynb) for the detail information. 
+The predictive model is a gradient boosted decision tree predictor trained on a synthetic data set, which is derived from the provided `Dummy-Data.csv` and further enriched using synthetic generation based on the business rules described in documentation. Please see [exploratory notebook](https://github.com/nilbot/shiny-computing-machine-bmi/blob/master/exploratory/experiment.ipynb) for the detail information. 
 
 The model in deployment (this app)  
 ## App specification
