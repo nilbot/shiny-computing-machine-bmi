@@ -42,3 +42,11 @@ returns
 ## Screenshot
 
 ![](./assets/screenshot.png)
+
+## Further Improvements
+
+First of all, this is a quick and dirty implementation of predictor model, we haven't look into operational potentials other than single shot REST API calls. (Even though a cli version based on existing code is trivial, we omit the cli operational mode as it is almost identical to REST version)
+
+The model is trained using python `scikit-learn` (and `lightgbm`), both framework prefer batched input (because of `numpy`), which is not designed to be run as rapid-fire REST API service. One potential upgrade from this is to use `ONNX` format and deploy the model on `ONNX` machine learning platforms, if such platforms are available. Alternatively, one could avail for GCP and Microsoft Azure's Machine Learning cloud offering for serving models, they all support scikit-learn models out of the box.
+
+Further, model was investigated and trained on the assumption that this was to learn the given business rules, therefore original dataset was not directly used for training the model, since the distribution present imbalanced labels. Still, the generated dataset is still small (less than 300 samples), and the result model is rudimentary (barely above 90% accuracy). Further improvement in the performance should be saught, should the time permit. 
